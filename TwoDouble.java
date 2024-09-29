@@ -1,0 +1,29 @@
+import java.util.Scanner;
+public class TwoDouble {
+    public static void main(String[] args) {
+        // Tạo đối tượng Scanner để nhập dữ liệu từ người dùng
+        Scanner input = new Scanner(System.in);
+        // Nhập 2 số kiểu double
+        System.out.print("Enter the first number: ");
+        double num1 = input.nextDouble();
+        System.out.print("Enter the second number: ");
+        double num2 = input.nextDouble();
+        // Tính tổng, hiệu, tích và thương
+        double sum = num1 + num2;
+        double difference = num1 - num2;
+        double product = num1 * num2;
+        double quotient = num1 / num2;
+        // Hiển thị kết quả
+        System.out.println("Sum: " + sum);
+        System.out.println("Difference: " + difference);
+        System.out.println("Product: " + product);
+        // Kiểm tra xem số thứ hai có khác 0 không trước khi tính thương
+        if (num2 != 0) {
+            System.out.println("Quotient: " + quotient);
+        } else {
+            System.out.println("Cannot divide by zero.");
+        }
+        // Đóng Scanner
+        input.close();
+    }
+}
