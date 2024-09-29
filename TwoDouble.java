@@ -1,3 +1,4 @@
+
 import java.util.Scanner;
 public class TwoDouble {
     public static void main(String[] args) {
