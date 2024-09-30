@@ -1,0 +1,46 @@
+import java.util.Scanner;
+
+public class QuadraticEquation {
+    public static void main(String[] args) {
+        // Tạo đối tượng Scanner để nhập dữ liệu từ người dùng
+        Scanner input = new Scanner(System.in);
+
+        // Nhập các hệ số a, b, c của phương trình bậc 2
+        System.out.print("Nhap he so a: ");
+        double a = input.nextDouble();
+
+        System.out.print("Nhap he so b: ");
+        double b = input.nextDouble();
+
+        System.out.print("Nhap he so c: ");
+        double c = input.nextDouble();
+
+        // Kiểm tra nếu a = 0 thì đây không phải là phương trình bậc 2
+        if (a == 0) {
+            System.out.println("Đây không phải là phương trình bậc 2.");
+        } else {
+            // Tính delta (Δ)
+            double delta = b * b - 4 * a * c;
+
+            // Kiểm tra và xét nghiệm dựa trên giá trị của delta
+            if (delta > 0) {
+                // Phương trình có 2 nghiệm phân biệt
+                double x1 = (-b + Math.sqrt(delta)) / (2 * a);
+                double x2 = (-b - Math.sqrt(delta)) / (2 * a);
+                System.out.println("Phương trình có 2 nghiệm phân biệt:");
+                System.out.println("x1 = " + x1);
+                System.out.println("x2 = " + x2);
+            } else if (delta == 0) {
+                // Phương trình có nghiệm kép
+                double x = -b / (2 * a);
+                System.out.println("Phương trình có nghiệm kép: x = " + x);
+            } else {
+                // Phương trình vô nghiệm
+                System.out.println("Phương trình vô nghiệm (không có nghiệm thực).");
+            }
+        }
+
+        // Đóng Scanner
+        input.close();
+    }
+}
