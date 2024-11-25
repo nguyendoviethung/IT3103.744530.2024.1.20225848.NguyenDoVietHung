@@ -1,0 +1,24 @@
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.util.Random;
+
+public class TestFileGenerator {
+    public static void main(String[] args) {
+        String filename = "test.exe"; // Tên file
+        int sizeInMB = 10; // Kích thước file (10 MB)
+
+        try (FileOutputStream fos = new FileOutputStream(filename)) {
+            Random random = new Random();
+            byte[] buffer = new byte[1024]; // Tạo buffer 1 KB
+
+            for (int i = 0; i < sizeInMB * 1024; i++) {
+                random.nextBytes(buffer); // Điền dữ liệu ngẫu nhiên vào buffer
+                fos.write(buffer); // Ghi dữ liệu vào file
+            }
+
+            System.out.println("File " + filename + " đã được tạo thành công với kích thước " + sizeInMB + " MB.");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
